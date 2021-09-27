@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,9 +9,8 @@
     <title>Empresa de Turismo</title>
 </head>
 <body>
-   
     <div class="container">
-        <nav>
+        <nav class="nave">
             <ul>
                 <li><h3>Cadastro de Motoristas</h3></li>
                 <li><a href="viagem.html">Viagem</a></li>
@@ -19,65 +18,62 @@
             </ul>
         </nav>
         <section class="cadastro">
-            
             <form class="row g-3 "></form>
                 <div class="campos">
                     <div class="col-md-11">
-                        <label for="validationCustom01" class="form-label">Cnh</label>
-                        <input type="text" class="form-control" id="validationCustom01" value="Mark" required>  
+                        <label for="cnh" class="form-label">Cnh</label>
+                        <input type="text" class="form-control" id="cnh" placeholder="Digite o numero da Cnh" value="Cnh" required>  
                     </div>
                     <div class="col-md-11">
-                        <label for="validationCustom02" class="form-label">Nome</label>
-                        <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="nome" placeholder="Digite o nome do motorista" value="Luciano Holz" required>
                     </div>
                     <div class="col-md-11">
-                        <label for="validationCustom02" class="form-label">Nascimento</label>
-                        <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+                        <label for="nascimento" class="form-label">Nascimento</label>
+                        <input type="date" class="form-control" id="nascimento" value="07-01-1982" required>
                     </div>
                     <div class="col-md-11">
-                        <label for="validationCustom02" class="form-label">Sexo</label>
-                        <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+                        <label for="sexo" class="form-label">Sexo</label>
+                        <input type="enum" class="form-control" id="sexo" value="M" required>
                     </div> 
                 </div>
                 <div class="campos">
                     <div class="col-md-11">
-                        <label for="validationCustom02" class="form-label">Telefone</label>
-                        <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+                        <label for="telefone" class="form-label">Telefone</label>
+                        <input type="text" class="form-control" id="telefone" placeholder="Digite o numero de telefone" value="53984516817" required>
                     </div>  
                     <div class="col-md-11">
-                        <label for="validationCustom01" class="form-label">Rua</label>
-                        <input type="text" class="form-control" id="validationCustom01" value="Mark" required>  
+                        <label for="rua" class="form-label">Rua</label>
+                        <input type="text" class="form-control" id="rua" placeholder="Digite o nome da rua" value="Dom Pedro I" required>  
                     </div>
                     <div class="col-md-11">
-                        <label for="validationCustom02" class="form-label">Numero</label>
-                        <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
-                    </div>
-                    
+                        <label for="numero" class="form-label">Numero</label>
+                        <input type="text" class="form-control" id="numero" placeholder="Digite o numero da casa ou apartamento" value="62" required>
+                    </div>      
                 </div>
                 <div class="campos">
                     <div class="col-md-11">
-                        <label for="validationCustom02" class="form-label">Bairro</label>
-                        <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+                        <label for="bairro" class="form-label">Bairro</label>
+                        <input type="text" class="form-control" id="bairro" placeholder="Digite o nome do bairro" value="Medianeira" required>
                     </div>
                     <div class="col-md-11">
-                        <label for="validationCustom02" class="form-label">Cidade</label>
-                        <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+                        <label for="cidade" class="form-label">Cidade</label>
+                        <input type="text" class="form-control" id="cidade" placeholder="Digite o nome da cidade" value="São Lourenço do Sul" required>
                     </div>
                     <div class="col-md-11">
-                        <label for="validationCustom02" class="form-label">UF</label>
-                        <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+                        <label for="uf" class="form-label">UF</label>
+                        <input type="text" class="form-control" id="uf" placeholder="Digite a o estado ex: RS" max="2" value="RS" required>
+                    </div>
+                    <div class="col-md-11">
+                        <button class="btn btn-primary" type="submit">Cadastrar</button>
                     </div>
                 </div>
-                <div >
-                <button class="btn btn-primary" type="submit">Cadastrar</button>
-            </div>
-            </form>
-            
+                
+            </form>   
         </section>
-        <hr>
         <section class="resultado">
             <table class="table">
-                <thead>
+                <thead class="nave2">
                   <tr>
                     <th scope="col">Cnh</th>
                     <th scope="col">Nome</th>
@@ -93,27 +89,20 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
+                    <td>11122233344</td>
+                    <td>Luciano Holz</td>
+                    <td>07-01-1982</td>
+                    <td>M</td>
+                    <td>53984516817</td>
+                    <td>Dom Pedro I</td>
+                    <td>62</td>
+                    <td>Medianeira</td>
+                    <td>São Lourenço de Sul</td>
+                    <td>RS</td>
                   </tr>
                 </tbody>
-              </table>
+            </table>
         </section>
-
     </div>
-
 </body>
 </html>
