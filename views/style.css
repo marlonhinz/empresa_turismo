@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+}
+nav {
+    margin-bottom: 15px;
+}
+li {
+    display: inline-flex;
+    padding: 10px;
+    margin-left: 20px;
+}
+
+
+.container {
+    margin: 0 auto;
+    width: 80%;
+    
+}
+
+.cadastro {
+    margin: 0 auto;
+    width: 100%;
+    
+}
+
+.campos {
+    float: left;
+    width: 33%;
+}
+
+.titulo {
+    display: inline-flex;
+}
+
+.form-control {
+    height: 30px;
+}
+
+.form-label {
+    font-weight: 500;
+}
+
+button {
+    float: right;
+}
