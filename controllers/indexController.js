@@ -10,7 +10,7 @@ module.exports = app => {
         const motorista = req.body;
         Motorista.adiciona(motorista, res );
     });
-    app.get('/motorista', (res) => {
+    app.get('/motorista', (req, res) => {
         Motorista.lista(res);
     });
     app.get('/motorista/:id', (req, res) => {
@@ -34,7 +34,7 @@ module.exports = app => {
         const carro = req.body;
         Carro.adiciona(carro, res);
     })
-    app.get('/carro', (res) => {
+    app.get('/carro', (req, res) => {
         Carro.lista(res);
     });
     app.get('/carro/:id', (req,res) => {
@@ -57,7 +57,7 @@ module.exports = app => {
         const viagem = req.body;
         Viagem.adiciona(viagem, res);
     })
-    app.get('/viagem', (res) => {
+    app.get('/viagem', (req, res) => {
         Viagem.lista(res);
     });
     app.get('/viagem/:id', (req,res) => {
