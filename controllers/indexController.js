@@ -1,14 +1,14 @@
 //Arquivo para controlar as rotas e a função delas
 //importando o método Motorista
-const Motorista = require('../models/indexModels');
-const Carro = require('../models/indexModels');
-const Viagem = require('../models/indexModels');
+const Motorista = require('../models/indexMotorista');
+const Carro = require('../models/indexCarro');
+const Viagem = require('../models/indexViagem');
 
 module.exports = app => {  
     ////////Rotas para a tabela motorista//////
     app.post('/motorista', (req, res) => {
         const motorista = req.body;
-        Motorista.adiciona(motorista, res);
+        Motorista.adiciona(motorista, res );
     });
     app.get('/motorista', (res) => {
         Motorista.lista(res);
@@ -52,7 +52,7 @@ module.exports = app => {
         Carro.deleta(id, res);
     });
     
-    ////////Rotas para a tabela viagem
+    // ////////Rotas para a tabela viagem
     app.post('/viagem', (req, res) => {
         const viagem = req.body;
         Viagem.adiciona(viagem, res);

@@ -7,6 +7,7 @@ class Tabelas {
         this.criarMotorista();
         this.criarCarro();
         this.criarViagem();
+        
     }
     //criando a tabela motorista
     criarMotorista() {
