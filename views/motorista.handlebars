@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Empresa de Turismo Motorista</title>
+    <style>
+        body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        margin: 0 auto;
+        width: 80%;
+    }
+
+    .nave {
+        margin-bottom: 15px;
+        background-color: rgb(209, 216, 250);
+    }
+    .nave2 {
+        background-color: rgb(209, 216, 250);
+    }
+    li {
+        display: inline-flex;
+        padding: 10px;
+        margin-right: 120px;
+        margin-left: -12px;
+    }
+    a {
+        text-decoration: none;
+        color: rgb(11, 10, 19);
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .cadastro {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .campos {
+        float: left;
+        width: 30%;
+        margin-bottom: 20px;
+        margin-left: 30px;
+    }
+    .campos2 {
+        width: 46%;
+        float: left;
+        margin-bottom: 20px;
+        margin-left: 28px;
+    }
+
+    .table {
+        margin-top: 25px;
+    }
+
+    .titulo {
+        display: inline-flex;
+    }
+
+    .form-label {
+        font-weight: 500;
+    }
+
+    .form-control {
+        height: 30px;
+        float: right;
+    }
+
+    button {
+        margin-top: 10px;
+        float: right;
+        right: 20px;
+    }
+
+    td {
+        max-width: 130px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="nave">
+            <ul>
+                <li><h3>Cadastro de Motoristas</h3></li>
+                <li><a href="viagem.html">Viagem</a></li>
+                <li><a href="carro.html">Carro</a></li>
+            </ul>
+        </nav>
+        <section class="cadastro">
+            <form class="row g-3 " action="/motorista" method="POST">
+                <div class="campos">
+                    <div class="col-md-11">
+                        <label for="cnh" class="form-label">Cnh</label>
+                        <input type="text" class="form-control" name="cnh" id="cnh" placeholder="Digite o numero da Cnh" required>  
+                    </div>
+                    <div class="col-md-11">
+                        <label for="sexo" class="form-label">Sexo</label>
+                        <input type="enum" class="form-control" name="sexo" id="sexo" placeholder="M para masculino ou F para feminino"  required>
+                    </div> 
+                    <div class="col-md-11">
+                        <label for="numero" class="form-label">Numero</label>
+                        <input type="text" class="form-control" name="numero" id="numero" placeholder="Digite o numero da casa ou apartamento"  required>
+                    </div>
+                     <div class="col-md-11">
+                        <label for="uf" class="form-label">UF</label>
+                        <input type="text" class="form-control" name="uf" id="uf" placeholder="Digite a o estado ex: RS" max="2"  required>
+                    </div>
+                </div>
+                <div class="campos">
+                    <div class="col-md-11">
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" class="form-control" name="nome" id="nome" placeholder="Digite o nome do motorista"  required>
+                    </div>
+                    <div class="col-md-11">
+                        <label for="telefone" class="form-label">Telefone</label>
+                        <input type="text" class="form-control" name="telefone" id="telefone" placeholder="Digite o numero de telefone"  required>
+                    </div>  
+                    <div class="col-md-11">
+                        <label for="bairro" class="form-label">Bairro</label>
+                        <input type="text" class="form-control" name="bairro" id="bairro" placeholder="Digite o nome do bairro"  required>
+                    </div>                      
+                </div>
+                <div class="campos">
+                    <div class="col-md-11">
+                        <label for="nascimento" class="form-label">Nascimento</label>
+                        <input type="date" class="form-control" name="nascimento" id="nascimento"  required>
+                    </div>
+                     <div class="col-md-11">
+                        <label for="rua" class="form-label">Rua</label>
+                        <input type="text" class="form-control" name="rua" id="rua" placeholder="Digite o nome da rua"  required>  
+                    </div>
+                    <div class="col-md-11">
+                        <label for="cidade" class="form-label">Cidade</label>
+                        <input type="text" class="form-control" name="cidade" id="cidade" placeholder="Digite o nome da cidade"  required>
+                    </div>
+                    <div class="col-md-11">
+                        <button class="btn btn-primary" type="submit">Cadastrar</button>
+                    </div>
+                </div> 
+            </form>   
+        </section>
+        <section class="resultado">
+            <table class="table">
+                <thead class="nave2">
+                  <tr>
+                    <th scope="col">Cnh</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Nascimento</th>
+                    <th scope="col">Sexo</th>
+                    <th scope="col">Telefone</th>
+                    <th scope="col">Rua</th>
+                    <th scope="col">Numero</th>
+                    <th scope="col">Bairro</th>
+                    <th scope="col">Cidade</th>
+                    <th scope="col">UF</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {{#each motoristas}}
+                        <tr>
+                            <td>{{dataValues.cnh}}</td>
+                            <td>{{dataValues.nome}}</td>
+                            <td>{{dataValues.nascimento}}</td>
+                            <td>{{dataValues.sexo}}</td>
+                            <td>{{dataValues.telefone}}</td>
+                            <td>{{dataValues.rua}}</td>
+                            <td>{{dataValues.numero}}</td>
+                            <td>{{dataValues.bairro}}</td>
+                            <td>{{dataValues.cidade}}</td>
+                            <td>{{dataValues.uf}}</td>
+                        </tr>
+                    {{/each}}  
+                </tbody>
+            </table>
+            <br><br>
+        </section>
+    </div>
+</body>
+</html>
+
+  
