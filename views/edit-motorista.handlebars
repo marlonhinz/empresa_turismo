@@ -94,54 +94,57 @@
             </ul>
         </nav>
         <section class="cadastro">
-            <form class="row g-3 " action="/motorista" method="POST">
+            <form class="row g-3 " action="/motorista-edit" method="POST">
                 <div class="campos">
                     <div class="col-md-11">
+                        <input type="hidden" class="form-control" name="id" id="id"  value="{{motorista.id}}">
+                    </div>
+                    <div class="col-md-11">
                         <label for="cnh" class="form-label">Cnh</label>
-                        <input type="text" class="form-control" name="cnh" id="cnh" placeholder="Digite o numero da Cnh" required>  
+                        <input type="text" class="form-control" name="cnh" id="cnh" placeholder="Digite o numero da Cnh" value="{{motorista.cnh}}">  
                     </div>
                     <div class="col-md-11">
                         <label for="sexo" class="form-label">Sexo</label>
-                        <input type="text" class="form-control" name="sexo" id="sexo" placeholder="M para masculino ou F para feminino"  required>
+                        <input type="text" class="form-control" name="sexo" id="sexo" value="{{motorista.sexo}}">
                     </div> 
                     <div class="col-md-11">
                         <label for="numero" class="form-label">Numero</label>
-                        <input type="text" class="form-control" name="numero" id="numero" placeholder="Digite o numero da casa ou apartamento"  required>
+                        <input type="text" class="form-control" name="numero" id="numero" value="{{motorista.numero}}">
                     </div>
                      <div class="col-md-11">
                         <label for="uf" class="form-label">UF</label>
-                        <input type="text" class="form-control" name="uf" id="uf" placeholder="Digite a o estado ex: RS" max="2"  required>
+                        <input type="text" class="form-control" name="uf" id="uf" value="{{motorista.uf}}">
                     </div>
                 </div>
                 <div class="campos">
                     <div class="col-md-11">
                         <label for="nome" class="form-label">Nome</label>
-                        <input type="text" class="form-control" name="nome" id="nome" placeholder="Digite o nome do motorista"  required>
+                        <input type="text" class="form-control" name="nome" id="nome" value="{{motorista.nome}}">
                     </div>
                     <div class="col-md-11">
                         <label for="telefone" class="form-label">Telefone</label>
-                        <input type="text" class="form-control" name="telefone" id="telefone" placeholder="Digite o numero de telefone"  required>
+                        <input type="text" class="form-control" name="telefone" id="telefone" value="{{motorista.telefone}}">
                     </div>  
                     <div class="col-md-11">
                         <label for="bairro" class="form-label">Bairro</label>
-                        <input type="text" class="form-control" name="bairro" id="bairro" placeholder="Digite o nome do bairro"  required>
+                        <input type="text" class="form-control" name="bairro" id="bairro" value="{{motorista.bairro}}">
                     </div>                      
                 </div>
                 <div class="campos">
                     <div class="col-md-11">
                         <label for="nascimento" class="form-label">Nascimento</label>
-                        <input type="date" class="form-control" name="nascimento" id="nascimento"  required>
+                        <input type="text" class="form-control" name="nascimento" id="nascimento" value="{{motorista.nascimento}}">
                     </div>
                      <div class="col-md-11">
                         <label for="rua" class="form-label">Rua</label>
-                        <input type="text" class="form-control" name="rua" id="rua" placeholder="Digite o nome da rua"  required>  
+                        <input type="text" class="form-control" name="rua" id="rua" value="{{motorista.rua}}">  
                     </div>
                     <div class="col-md-11">
                         <label for="cidade" class="form-label">Cidade</label>
-                        <input type="text" class="form-control" name="cidade" id="cidade" placeholder="Digite o nome da cidade"  required>
+                        <input type="text" class="form-control" name="cidade" id="cidade" value="{{motorista.cidade}}">
                     </div>
                     <div class="col-md-11">
-                        <button class="btn btn-primary" type="submit">Cadastrar</button>
+                        <button class="btn btn-primary" type="submit">Atualizar</button>
                     </div>
                 </div> 
             </form>   
@@ -165,8 +168,8 @@
                 <tbody>
                     {{#each motoristas}}
                         <tr>
-                            <td>{{dataValues.cnh}}</td>
-                            <td>{{dataValues.nome}}</td>
+                            <td>{{motorista.cnh}}</td>
+                            <td>{{motorista.nome}}</td>
                             <td>{{#formatDate dataValues.nascimento}}{{/formatDate}}</td>
                             <td>{{dataValues.sexo}}</td>
                             <td>{{dataValues.telefone}}</td>
@@ -176,7 +179,10 @@
                             <td>{{dataValues.cidade}}</td>
                             <td>{{dataValues.uf}}</td>
                             <td><a href="/del-motorista/{{dataValues.id}}"><button class="btnDeletar">Deletar</button></a></td>
-                            <td><a href="/edit-motorista/{{dataValues.id}}"><button class="btnEditar">Editar</button></a></td>
+                            <td><a href="/motorista/{{dataValues.id}}"><button class="btnEditar">Editar</button></a></td>
+                        
+                        
+                        
                         </tr>
                     {{/each}}  
                 </tbody>

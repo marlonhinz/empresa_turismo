@@ -1,5 +1,4 @@
 
-const Sequelize  = require('sequelize');
 const server = require("../server");
 
 const Carro = server.sequelize.define('carro',{

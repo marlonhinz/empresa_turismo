@@ -93,34 +93,36 @@
                 <form class="row g-3 " action="/viagem" method="POST">
                     <div class="campos2">
                         <div class="col-md-12">
-                            <label for="destino" class="form-label">Destino</label>
-                            <input type="text" class="form-control" name="destino" id="destino"  required>
+                            <label for="destino" class="form-label">Id</label>
+                            <input type="number" class="form-control" name="id" id="id"  value="{{viagem.id}}">
                         </div>
                         <div class="col-md-12">
-                                <label for="dataRetorno" class="form-label">Data Retorno</label>
-                                <input type="date" class="form-control" name="dataRetorno" id="dataRetorno"  required>
+                            <label for="destino" class="form-label">Destino</label>
+                            <input type="text" class="form-control" name="destino" id="destino"  value="{{viagem.destino}}">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="dataRetorno" class="form-label">Data Retorno</label>
+                            <input type="text" class="form-control" name="dataRetorno" id="dataRetorno"  value="{{viagem.dataRetorno}}">
                         </div>
                         <div class="col-md-12">
                             <label for="renavamCarro" class="form-label">Renavam Carro</label>
-                            <input type="text" class="form-control" name="renavamCarro" id="renavamCarro" required>  
+                            <input type="text" class="form-control" name="renavamCarro" id="renavamCarro" value="{{viagem.renavamCarro}}">  
                         </div>  
                     </div>
                     <div class="campos2">
                         <div class="col-md-12">
                             <label for="dataSaida" class="form-label">Data Saída</label>
-                            <input type="date" class="form-control" name="dataSaida" id="dataSaida"  required>
+                            <input type="text" class="form-control" name="dataSaida" id="dataSaida" value="{{viagem.dataSaida}}">
                         </div>
                         <div class="col-md-12">
                             <label for="cnhMotorista" class="form-label">Cnh Motorista</label>
-                            <input type="text" class="form-control" name="cnhMotorista" id="cnhMotorista"  required>  
+                            <input type="text" class="form-control" name="cnhMotorista" id="cnhMotorista" value="{{viagem.cnhMotorista}}">  
                         </div>
                         <div >
-                            <button class="btn btn-primary" type="submit">Cadastrar</button>
+                            <button class="btn btn-primary" type="submit">Atualizar</button>
                         </div>
                     </div>  
-                    
-                </form>
-                
+                </form> 
             </section>
             <section class="resultado">
                 <table class="table">
@@ -137,14 +139,14 @@
                     <tbody>
                         {{#each viagem}}
                             <tr>
-                                <td>{{dataValues.id}}</td>
-                                <td>{{dataValues.destino}}</td>
+                                <td>{{viagem.id}}</td>
+                                <td>{{viagem.destino}}</td>
                                 <td>{{#formatDate dataValues.dataSaida}}{{/formatDate}}</td>
                                 <td>{{#formatDate dataValues.dataRetorno}}{{/formatDate}}</td>
                                 <td>{{dataValues.cnhMotorista}}</td>
                                 <td>{{dataValues.renavamCarro}}</td>
                                 <td><a href="/del-viagem/{{dataValues.id}}"><button class="btnDeletar">Deletar</button></a></td>
-                                <td><a href="/edit-viagem/{{dataValues.id}}"><button class="btnEditar">Editar</button></a></td>
+                                <td><a href="/viagem/{{dataValues.id}}"><button class="btnEditar">Editar</button></a></td>
                             </tr>
                         {{/each}}
                     </tbody>

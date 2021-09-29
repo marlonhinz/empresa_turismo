@@ -35,8 +35,8 @@ const Viagem = server.sequelize.define('viagem',{
 });
 
 
-//Motorista.belongsToMany(Carro, {through: 'viagem'});
-//Carro.belongsToMany(Motorista, {through: 'viagem'});
+//Motorista.belongsToMany(Carro, {through: 'Viagem'});
+//Carro.belongsToMany(Motorista, {through: 'Viagem'});
 
 //Criar tabela
 //Carro.sync({force: true});
